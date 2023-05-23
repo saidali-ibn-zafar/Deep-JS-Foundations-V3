@@ -375,3 +375,31 @@ function setsMatch(arr1, arr2) {
   return false;
 }
 
+ 
+{ 
+  let x = 2;
+}
+// x can NOT be used here
+
+
+{ 
+  var x = 2; 
+}
+// x CAN be used here
+
+// code here can NOT use carName
+
+function myFunction() {
+  let carName = "Volvo";
+  // code here CAN use carName
+}
+
+// code here can NOT use carName
+
+myFunction();
+
+// code here can use carName 
+
+function myFunction() {
+  carName = "Volvo";
+}
