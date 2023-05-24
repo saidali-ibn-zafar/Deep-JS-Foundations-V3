@@ -209,7 +209,7 @@ console.log(isValidName(" \t\n") === false);
 console.log(isValidName("X") === false);
 console.log(hoursAttended("", 6) === false);
 
-/ = = = = = = = = = = = = = = = = = = = = = = =
+// = = = = = = = = = = = = = = = = = = = = = = =
 // Double & Triple Equals
 
 // == checks value(loose)
@@ -374,32 +374,88 @@ function setsMatch(arr1, arr2) {
   }
   return false;
 }
+// = = = = = = = = = = = = = = = = = = = = = = =
 
- 
-{ 
-  let x = 2;
-}
-// x can NOT be used here
+// = = = = = = = = = = = = = = = = = = = = = = =
+// Scope {
+// Nested Scope
+// Hoisting
+// Closure
+// Modules
+// }
 
+var teacher = "Kyle"; // in big scope
 
-{ 
-  var x = 2; 
-}
-// x CAN be used here
-
-// code here can NOT use carName
-
-function myFunction() {
-  let carName = "Volvo";
-  // code here CAN use carName
+// in big scope
+function otherClass() {
+  var teacher = "Suzy"; // in other scope
+  console.log("Welcome");
 }
 
-// code here can NOT use carName
-
-myFunction();
-
-// code here can use carName 
-
-function myFunction() {
-  carName = "Volvo";
+function ask() {
+  // in big scope
+  var question = "Why?"; // in other1 scope
+  console.log(question);
 }
+
+otherClass(); // in big scope
+ask(); // in big scope
+
+// = = = = = = = = = = = = = = = = = = = = = = =
+
+// scope
+("use strict");
+var num = 2;
+
+function newFunction() {
+  num = 5;
+  say = "React"; //REFERENCE ERROR should be written
+  console.log("newFunction was called");
+}
+
+newFunction();
+
+console.log(num);
+
+// = = = = = = = = = = = = = = = = = = = = = = = =
+
+var teacher = "Kyle";
+
+function otherClass() {
+  var teacher = "Suzy";
+
+  function ask(question) {
+    console.log(teacher, question);
+  }
+
+  ask("Why?");
+}
+
+otherClass(); // Suzy Why?
+ask("???"); // should get REFERENCE ERROR
+
+// = = = = = = = = = = = = = = = = = = = = = = = =
+// undefined VS undeclared
+// undefined - A variable that has not been assigned a value
+// undeclared - It occurs when a variable which hasn't been declared using var, let or const is being tried to access
+
+function teacher() {
+  /*...*/
+}
+
+var myTeacher = function anotherTeacher() {
+  console.log(anotherTeacher);
+};
+
+console.log(teacher);
+console.log(myTeacher);
+// console.log(anotherTeacher); //we get REFERENCE ERROR
+
+// = = = = = = = = = = = = = = = = = = = = = = = =
+var clickHandler = function () {
+  // ...
+};
+
+var keyHandler = function keyHandler() {
+  // ...
+};
