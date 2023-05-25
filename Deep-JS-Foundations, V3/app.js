@@ -452,6 +452,7 @@ console.log(myTeacher);
 // console.log(anotherTeacher); //we get REFERENCE ERROR
 
 // = = = = = = = = = = = = = = = = = = = = = = = =
+// naming function expression
 var clickHandler = function () {
   // ...
 };
@@ -459,3 +460,24 @@ var clickHandler = function () {
 var keyHandler = function keyHandler() {
   // ...
 };
+
+// = = = = = 
+const getRectArea = function(width, height) {
+  return width * height;
+};
+
+console.log(getRectArea(3, 4));
+// Expected output: 12
+
+
+console.log(notHoisted); // undefined
+// Even though the variable name is hoisted,
+// the definition isn't. so it's undefined.
+notHoisted(); // TypeError: notHoisted is not a function
+
+var notHoisted = function () {
+  console.log("bar");
+};
+
+
+
