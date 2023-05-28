@@ -452,7 +452,6 @@ console.log(myTeacher);
 // console.log(anotherTeacher); //we get REFERENCE ERROR
 
 // = = = = = = = = = = = = = = = = = = = = = = = =
-// naming function expression
 var clickHandler = function () {
   // ...
 };
@@ -461,23 +460,155 @@ var keyHandler = function keyHandler() {
   // ...
 };
 
-// = = = = = 
-const getRectArea = function(width, height) {
-  return width * height;
+// = = = = = = = = = = = = = = = = = = = = = = = = = = = =
+// Arrow function
+
+// var ids = people.map((person) => person.id);
+
+// var ids = people.map(function getId(person) {
+//   return person.id;
+// });
+
+// = = = = = = = = = = = = = = = = = = = = = = = = = = = =
+var teacher1 = "Artur";
+
+function anotherTeacher1() {
+  var teacher1 = "Marek";
+  console.log(teacher1); // Marek
+}
+
+anotherTeacher1(); // Marek
+
+console.log(teacher1); // Artur
+
+// = = = = = = = = = = = = = = = = = = = = = = = = = = = =
+var teacher = "Kyle";
+
+(function (teacher) {
+  console.log(teacher);
+})("Suzy");
+
+console.log(teacher);
+
+// or
+
+var teacher = "Kyle";
+
+(function (teacher) {
+  var teacher = "Suzy";
+  console.log(teacher);
+})();
+
+console.log(teacher);
+
+// = = = = = = = = = = = = = = = = = = = = = = = = = = = =
+// var teacherr;
+// try {
+//   return fetchTeacher(1);
+// } catch (err) {
+//   teacherr = "Kyle";
+// }
+
+// = = = = = = = = = = = = = = = = = = = = = = = = = = = =
+// Block scoping
+
+// Instead of an IIFE, we can use block scope declaration
+var teacher = "Kyle";
+
+{
+  let teacher = "Suzy";
+  console.log(teacher); // Suzy
+}
+console.log(teacher); // Kyle
+
+// = = = = = = = = = = = = = = = = = = = = = = = = = = = =
+function diff(x, y) {
+  if (x > y) {
+    let tmp = x;
+    x = y;
+    y = tmp;
+  }
+
+  return y - x;
+}
+console.log(diff(4, 5));
+
+// = = = = = = = = = = = = = = = = = = = = = = = = = = = =
+var person = "Adam";
+person = "Ali"; // ok
+
+const person2 = person;
+// person2 = "Umar"; // TypeError;
+
+const newArr = [1, 2, 3, 4, 5];
+newArr[0] = 8; // Allowed
+// then newArr = [8, 2, 3, 4, 5];
+
+// = = = = = = = = = = = = = = = = = = = = = = = = = = = =
+// Hoisting
+
+var student;
+var teacher;
+
+student; // undefined
+teacher; // undefined
+
+student = "you";
+teacher = "Kyle";
+
+// = = = = = = = = = = = = = = = = = = = = = = = = = = = =
+
+// var hoisting?
+// ussualy bad:
+teacher = "Kyle";
+var teacher;
+
+// function hoisting?
+// IMO actually pretty useful
+getTeacher(); // Kyle
+
+function getTeacher() {
+  return teacher;
+}
+
+// let does not hoist?
+// {
+//   teacher = "Kyle"; // TDZ error!
+//   let teacher;
+// }
+
+// var teacher = "Kyle";
+// {
+//   console.log(teacher); // TDZ error!
+//   let teacher = "Suzy";
+// }
+
+function askQuestion(question) {
+  setTimeout(function wait10Sec() {
+    console.log(question);
+  }, 10000);
+}
+
+askQuestion("What is closure?");
+
+var teacher = "Kyle";
+
+var myTeacher = function () {
+  console.log(teacher);
 };
 
-console.log(getRectArea(3, 4));
-// Expected output: 12
+teacher = "Suzy";
 
+myTeacher();
 
-console.log(notHoisted); // undefined
-// Even though the variable name is hoisted,
-// the definition isn't. so it's undefined.
-notHoisted(); // TypeError: notHoisted is not a function
+// = = = = =
+for (var i = 1; i <= 3; i++) {
+  setTimeout(function () {
+    console.log(`i: ${i}`);
+  }, i * 1000);
+}
+// i: 4
+// i: 4
+// i: 4
 
-var notHoisted = function () {
-  console.log("bar");
-};
-
-
-
+// if we use let , then we would get 1, 2, 3.
