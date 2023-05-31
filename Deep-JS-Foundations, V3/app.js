@@ -612,3 +612,77 @@ for (var i = 1; i <= 3; i++) {
 // i: 4
 
 // if we use let , then we would get 1, 2, 3.
+
+
+// = = = = = = = = = = = = = = = = = = = = = = = = = = =
+
+function greet() {
+  console.log("Hello, " + this.name);
+}
+
+var person = {
+  name: "John",
+  greet: greet,
+};
+
+person.greet(); // Outputs "Hello, John"
+
+var calculator = {
+  operand1: 5,
+  operand2: 10,
+  sum: function () {
+    return this.operand1 + this.operand2;
+  },
+};
+
+console.log(calculator.sum()); // Outputs 15
+
+// method -> object
+// function -> global (window, global)
+
+// const video = {
+//   title: "a",
+//   play() {
+//     console.log(this);
+//   },
+// };
+
+// video.stop = function () {
+//   console.log(this);
+// };
+
+// video.stop();
+
+const video = {
+  title: "b",
+  tags: ["a", "b", "c", "d", "e", "f"],
+  showTags() {
+    this.tags.forEach(function (tag) {
+      console.log(this.title, tag);
+    }, this);
+  },
+};
+
+video.showTags();
+
+// = = = = = = = = = = = = = = = = = = = = = =
+class Car {
+  constructor(make, model, year, color) {
+    this.make = make;
+    this.model = model;
+    this.year = year;
+    this.color = color;
+  }
+
+  drive() {
+    console.log("You drive the car!");
+  }
+  brake() {
+    console.log("You step on the brakes!");
+  }
+}
+let car1 = new Car("Ford", "Mustang", 2022, "red");
+let car2 = new Car("Chevy", "Corvette", 2021, "blue");
+
+console.log(car1.model);
+
