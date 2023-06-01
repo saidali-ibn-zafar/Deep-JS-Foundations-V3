@@ -583,6 +583,9 @@ function getTeacher() {
 //   let teacher = "Suzy";
 // }
 
+// = = = = = = = = = = = = = = = = = = = = = = = = = = = =
+// Closure
+
 function askQuestion(question) {
   setTimeout(function wait10Sec() {
     console.log(question);
@@ -613,6 +616,120 @@ for (var i = 1; i <= 3; i++) {
 
 // if we use let , then we would get 1, 2, 3.
 
+// = = = = = = = = = = = = = = = = = = = = = = = = = = =
+// Module Pattern
+
+var workshop = {
+  teacher: "Kyle",
+  ask(question) {
+    console.log(this.teacher, question);
+  },
+};
+
+workshop.ask("Is this a module?"); // Kyle Is this a module?
+
+// = = = = = = = = = = = = = = = = = = = = = = = = = = =
+
+var workshop = (function Module(teacher) {
+  var publicAPI = { ask };
+  return publicAPI;
+
+  // ***********
+
+  function ask(question) {
+    console.log(teacher, question);
+  }
+})("Kyle");
+
+workshop.ask("Is this a module?"); // Kyle Is this a module?
+
+// = = = = = = = = = = = = = = = = = = = = = = = = = = =
+// Objects (Oriented)
+
+// this
+// class()
+// Prototypes
+// "Inheritance" vs "Behaviour Delegation"
+// (OO vs OLOO );
+
+// = = = = = = = = = = = = = = = = = = = = = = = = = = =
+// THIS
+
+function ask(question) {
+  console.log(this.teacher, question);
+}
+
+function otherClass() {
+  var myContext = {
+    teacher: "Suzy",
+  };
+  ask.call(myContext, "Why?"); // Suzy Why?
+}
+
+otherClass();
+
+// = = = = = = = = = = = = = = = = = = = = = = = = = = =
+// this: dynamic binding -> sharing
+
+function ask(question) {
+  console.log(this.teacher, question);
+}
+
+var workshop1 = {
+  teacher: "Kyle",
+  ask: ask,
+};
+
+var workshop2 = {
+  teacher: "Suzy",
+  ask: ask,
+};
+
+workshop1.ask("How do I share a method?");
+// Kyle How do I share a method?
+
+workshop2.ask("How do I share a method?");
+// Suzy How do I share a method?
+
+// = = = = = = = = = = = = = = = = = = = = = = = = = = =
+// this: explicit binding
+
+function ask(question) {
+  console.log(this.teacher, question);
+}
+
+var workshop1 = {
+  teacher: "Kyle",
+};
+
+var workshop2 = {
+  teacher: "Suzy",
+};
+
+ask.call(workshop1, "Can I explicitly set context?");
+// Kyle Can I explicitly set context?
+
+ask.call(workshop2, "Can I explicitly set context?");
+// Suzy Can I explicitly set context?
+
+// = = = = = = = = = = = = = = = = = = = = = = = = = = =
+// Constructor calls
+
+function ask(question) {
+  console.log(this.teacher, question);
+}
+
+var newEmptyObject = new ask("What is 'new' doing here?");
+// undefined What is 'new' doing here?
+
+// = = = = = = = = = = = = = = = = = = = = = = = = = = =
+
+// (function repeat() {
+//   eat();
+//   sleep();
+//   code();
+//   repeat();
+// })();
 
 // = = = = = = = = = = = = = = = = = = = = = = = = = = =
 
@@ -685,4 +802,3 @@ let car1 = new Car("Ford", "Mustang", 2022, "red");
 let car2 = new Car("Chevy", "Corvette", 2021, "blue");
 
 console.log(car1.model);
-
