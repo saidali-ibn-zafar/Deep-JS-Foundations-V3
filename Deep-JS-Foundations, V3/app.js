@@ -802,3 +802,10 @@ let car1 = new Car("Ford", "Mustang", 2022, "red");
 let car2 = new Car("Chevy", "Corvette", 2021, "blue");
 
 console.log(car1.model);
+
+!!"false" == !!"true"; // -> true
+!!"false" === !!"true"; // -> true
+
+console.log("B" + "a" + +"a" + "a"); // > BaNaNa
+
+// The expression (+"a"), which converts "a" to not a number (NaN)
