@@ -149,6 +149,7 @@ console.log(sum_of_nums([3683, 2902, 3951, -475, 1617, -2385])); // 4519
 
 
 // const filteredArr = arr.filter((el) => el > 0);
+
 // var smallest = Math.min(...filteredArr);
 
 // var smallest2 = filteredArr.find((el) => el > smallest);
@@ -160,3 +161,30 @@ console.log(sum_of_nums([3683, 2902, 3951, -475, 1617, -2385])); // 4519
 // });
 
 // return `${smallest} + ${smallest2} = ${smallest + smallest2}`;
+
+// == == == == == == == == 
+// Prototype object
+const animal = {
+  eat() {
+    console.log(`${this.name} is eating.`);
+  }
+};
+
+// Creating objects linked to the prototype
+const dog = Object.create(animal);
+dog.name = "Buddy";
+dog.bark = function() {
+  console.log("Woof!");
+};
+
+const cat = Object.create(animal);
+cat.name = "Whiskers";
+cat.meow = function() {
+  console.log("Meow!");
+};
+
+dog.eat(); // Delegated to 'animal' object
+dog.bark(); // Defined directly on 'dog' object
+
+cat.eat(); // Delegated to 'animal' object
+cat.meow(); // Defined directly on 'cat' object
