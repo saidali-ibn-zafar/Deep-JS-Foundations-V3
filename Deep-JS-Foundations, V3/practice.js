@@ -188,3 +188,62 @@ dog.bark(); // Defined directly on 'dog' object
 
 cat.eat(); // Delegated to 'animal' object
 cat.meow(); // Defined directly on 'cat' object
+
+
+
+// var myName;
+// typeof myName; // undefined
+// myName = "Saidali";
+// typeof myName; // string
+// myName = null;
+// console.log(typeof myName); // object
+
+// let a = "javascript";
+// a - 2; 
+
+// undefined == null // true
+// undefined === null // false
+
+// -0
+
+// const arr = [];
+// console.log(typeof typeof arr)
+// "object"
+
+// console.log(String([])); // ""
+// console.log(String([1,2,3])); // "1,2,3"
+// console.log(String([null, undefined])); // ","
+
+
+// let one = true;
+// let zero = false;
+// Number(one); // 1
+// Number(zero); // 0
+// one = 10;
+// zero = 7;
+// Boolean(one); // true
+// Boolean(zero); // true
+
+
+// alert // return STRING
+
+// 1 < 2 < 3; // true
+// 1 > 2 > 3; // false
+
+// let a = [1,2,3];
+// let b = [1,2,3];
+// a == b // false
+// a === b // false
+
+// const add = (a, b) => a+b;
+
+// function add(a, b) {
+//     return a+b
+// }
+
+// console.log(a); 
+// var a = 3;
+
+
+
+
