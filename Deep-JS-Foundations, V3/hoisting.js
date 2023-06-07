@@ -94,6 +94,16 @@ function example() {
 example();
 
 // = = = = = = = = = = = = = = = = = = = =
+foo(); // This works even though foo is defined later in the code
+
+function foo() {
+  console.log("Hello, world!");
+}
+
+console.log(x); // undefined
+var x = 10;
+console.log(x); // 10
+
 
 // = = = = = = = = = = = = = = = = = = = =
 
