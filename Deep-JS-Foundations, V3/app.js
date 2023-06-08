@@ -809,3 +809,50 @@ console.log(car1.model);
 console.log("B" + "a" + +"a" + "a"); // > BaNaNa
 
 // The expression (+"a"), which converts "a" to not a number (NaN)
+
+
+// = = = = = = = = = = =
+      var globalVariable = 10;
+
+      function myFunction() {
+        console.log(globalVariable); // Accessible inside functions
+      }
+
+      console.log(globalVariable); // Accessible outside functions
+
+      // = = = = = = = = = = =
+      // module.js
+      export const moduleVariable = 20;
+
+      // main.js
+      import { moduleVariable } from "./module.js";
+
+      console.log(moduleVariable); // Accessible in main.js
+
+      // = = = = = = = = = = =
+      function myFunction() {
+        var functionVariable = 30;
+
+        console.log(functionVariable); // Accessible inside myFunction()
+
+        function innerFunction() {
+          console.log(functionVariable); // Accessible inside innerFunction()
+        }
+
+        innerFunction();
+      }
+
+      console.log(functionVariable); // Throws an error - functionVariable is not defined
+
+      // = = = = = = = = = = =
+      function myFunction() {
+        if (true) {
+          let blockVariable = 40;
+          const constantVariable = 50;
+          console.log(blockVariable); // Accessible inside the if block
+          console.log(constantVariable); // Accessible inside the if block
+        }
+
+        console.log(blockVariable); // Throws an error - blockVariable is not defined
+        console.log(constantVariable); // Throws an error - constantVariable is not defined
+      }
