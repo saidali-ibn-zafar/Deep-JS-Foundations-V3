@@ -104,8 +104,119 @@ console.log(x); // undefined
 var x = 10;
 console.log(x); // 10
 
-
 // = = = = = = = = = = = = = = = = = = = =
+
+const add = (a, b) => a+b
+function add(a, b) {
+return a+b
+}
+
+console.log(x);
+var x = 5;
+
+console.log(a);
+let a = 3;
+console.log(a);
+const a = 5;
+// -------------
+var a = 1;
+function b() {
+    a = 10;
+    return;
+    function a() {}
+}
+b();
+console.log(a);
+
+--------
+function test() {
+    console.log(a);
+    var a = 'Hello, world!';
+}
+test();
+---------
+a = 'Hello';
+function a() {}
+console.log(typeof a);
+---------
+var foo = function() {
+    console.log('first');
+}
+foo();
+
+var foo = function() {
+    console.log('second');
+}
+foo();
+// ----------
+console.log(a());
+var a = function() {
+    return 'Hello world!';
+}
+
+// -------------
+function test() {
+    console.log(x);
+    var x = 5;
+    console.log(x);
+    var x = 10;
+}
+test();
+// -------------
+console.log(a());
+var a = 3;
+console.log(a());
+// -----------------
+function foo() {
+    bar();
+    function bar() {
+        console.log('Hello, world!');
+    }
+}
+foo();
+bar();
+// ------------------
+var a = 1;
+function b() {
+    a = 10;
+    var a;
+    console.log(a);
+}
+b();
+console.log(a);
+// -----------------
+console.log(foo);
+function foo() {
+    console.log('Hello, world!');
+}
+var foo = 'bar';
+// ---------------
+var a = 1;
+function b() {
+    console.log(a);
+    a = 10;
+    console.log(a);
+    function a() {}
+}
+b();
+console.log(a);
+// ----------------
+function outer() {
+    inner();
+    function inner() {
+        console.log(foo);
+        var foo = 'Hello';
+    }
+}
+outer();
+// -----------
+var x = 'outer';
+function outer() {
+    var x = 'inner';
+    console.log(x);
+}
+outer();
+console.log(x);
 
 // = = = = = = = = = = = = = = = = = = = =
 
