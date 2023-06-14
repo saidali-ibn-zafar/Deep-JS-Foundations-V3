@@ -244,6 +244,27 @@ cat.meow(); // Defined directly on 'cat' object
 // console.log(a); 
 // var a = 3;
 
+// console.log([] == ![]) // true
+// "b" + "a" + +"a" + "a" // baNaNa
+// !![] 
+// [] == true
+
+
+// console.log(null == 0); 
+// console.log(null > 0); 
+// console.log(null >= 0); 
+
+undefined == 0;
+undefined > 0;
+undefined >= 0; 
+
+// const myStr = 'Hello';
+// const newStr = myStr.toLowerCase();
+// console.log(myStr); 
+ console.log(newStr); //
+
+
+
 
 
 
