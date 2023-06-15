@@ -44,5 +44,19 @@
   - `toFixed()`,
   -  and so on...
 -----
+### Type Comparison
+- "In JavaScript, type comparison refers to the process of comparing the equality or inequality of values while considering their data types using comparison operators."
+
+  - Comparison operators:
+
+      |          |          |
+      |----------|----------|
+      | >   greater than | ==  equal to   | 
+      | <   less than | !=  not equal to    | 
+      | >=   greater than or equal | ===  strict equal to   | 
+      | <=   less than or equal | !==  strict not equal to   | 
+
+
+-----
 ### For more: 
   - [Practice](coercion.js)
