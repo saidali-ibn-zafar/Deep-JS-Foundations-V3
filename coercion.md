@@ -59,4 +59,4 @@
 
 -----
 ### For more: 
-  - [Practice](coercion.js)
+  - [Practice](Deep-JS-Foundations, V3/coercion.js)
