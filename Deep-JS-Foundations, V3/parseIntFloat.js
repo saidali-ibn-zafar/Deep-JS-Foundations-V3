@@ -72,3 +72,59 @@ console.log(parseFloat("NaN")); // Output: NaN
 console.log(parseFloat("")); // Output: NaN
 // An empty string is not a valid floating-point number, resulting in NaN.
 
+// Number()
+console.log(Number("512px"));   // Output: NaN
+console.log(+"512px");          // Output: NaN
+
+console.log(Number("42.5"));    // Output: 42.5
+console.log(+"42.5");           // Output: 42.5
+
+console.log(Number("true"));    // Output: NaN
+console.log(+"true");           // Output: NaN
+
+console.log(Number("false"));   // Output: NaN
+console.log(+"false");          // Output: NaN
+
+console.log(Number(true));           // Output: 1
+// Explanation: The boolean value true is converted into the number 1.
+
+console.log(Number(false));          // Output: 0
+// Explanation: The boolean value false is converted into the number 0.
+
+console.log(Number(""));             // Output: 0
+// Explanation: The empty string is converted into the number 0.
+
+console.log(Number([]));              // Output: 0
+// Explanation: An empty array is converted into the number 0.
+
+console.log(Number([1, 2, 3]));       // Output: NaN
+// Explanation: Converting an array with elements directly into a number results in NaN.
+
+console.log(Number(["10"]));          // Output: 10
+// Explanation: The array containing a single element "10" is successfully converted into the number 10.
+
+console.log(Number(["Hello"]));       // Output: NaN
+// Explanation: Converting an array with a non-numeric element "Hello" into a number results in NaN.
+
+console.log(+true);                  // Output: 1
+// Explanation: The unary plus operator converts the boolean value true into the number 1.
+
+console.log(+false);                 // Output: 0
+// Explanation: The unary plus operator converts the boolean value false into the number 0.
+
+console.log(+"");                   // Output: 0
+// Explanation: The unary plus operator converts the empty string into the number 0.
+
+console.log(+[]);                    // Output: 0
+// Explanation: The unary plus operator converts an empty array into the number 0.
+
+console.log(+[1, 2, 3]);             // Output: NaN
+// Explanation: Converting an array with elements directly into a number results in NaN.
+
+console.log(+["10"]);               // Output: 10
+// Explanation: The unary plus operator successfully converts the array containing a single element "10" into the number 10.
+
+console.log(+["Hello"]);            // Output: NaN
+// Explanation: Converting the array with a non-numeric element "Hello" into a number results in NaN.
+
+
