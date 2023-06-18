@@ -50,6 +50,63 @@ console.log(null === {}); // false
 console.log(null === []); // false
 console.log(null === ""); // false
 
+console.log(null == undefined);          
+// Output: true
+// Explanation: In JavaScript, the `null` value represents the intentional absence of any object value, while `undefined` represents the absence of any assigned value. When using the equality (==) operator, `null` and `undefined` are considered equal because they both represent the absence of a meaningful value.
+
+console.log(null === undefined);         
+// Output: false
+// Explanation: The strict equality (===) operator requires both the value and the type to be the same. Since `null` and `undefined` have different types, the comparison evaluates to false.
+
+console.log(null > 0);                   
+// Output: false
+// Explanation: In numeric comparisons, `null` is coerced to 0. Since 0 is not greater than 0, the comparison evaluates to false.
+
+console.log(null < 0);                   
+// Output: false
+// Explanation: In numeric comparisons, `null` is coerced to 0. Since 0 is not less than 0, the comparison evaluates to false.
+
+console.log(null >= 0);                  
+// Output: true
+// Explanation: In numeric comparisons, `null` is coerced to 0. Since 0 is equal to 0, the comparison evaluates to true.
+
+console.log(null <= 0);                  
+// Output: true
+// Explanation: In numeric comparisons, `null` is coerced to 0. Since 0 is equal to 0, the comparison evaluates to true.
+
+console.log(null == 0);                  
+// Output: false
+// Explanation: `null` and 0 are not equal when using the equality (==) operator because `null` represents the absence of a meaningful value, while 0 is a specific numeric value.
+
+console.log(null === 0);                 
+// Output: false
+// Explanation: The strict equality (===) operator requires both the value and the type to be the same. Since `null` and 0 have different types, the comparison evaluates to false.
+
+console.log(null == false);              
+// Output: false
+// Explanation: `null` and `false` are not equal when using the equality (==) operator because they represent different concepts. `null` represents the absence of a meaningful value, while `false` represents a specific boolean value.
+
+console.log(null === false);             
+// Output: false
+// Explanation: The strict equality (===) operator requires both the value and the type to be the same. Since `null` and `false` have different types, the comparison evaluates to false.
+
+console.log(null == "");                 
+// Output: false
+// Explanation: `null` and an empty string are not equal when using the equality (==) operator because they represent different concepts. `null` represents the absence of a meaningful value, while an empty string represents an empty sequence of characters.
+
+console.log(null === "");                
+// Output: false
+// Explanation: The strict equality (===) operator requires both the value and the type to be the same. Since `null` and an empty string have different types, the comparison evaluates to false.
+
+console.log(null == []);                 
+// Output: false
+// Explanation: `null` and an empty array are not equal when using the equality (==) operator because they represent different concepts. `null` represents the absence of a meaningful value, while an empty array represents a specific data structure.
+
+console.log(null === []);                
+// Output: false
+// Explanation: The strict equality (===) operator requires both the value and the type to be the same. Since `null` and an empty array have different types, the comparison evaluates to false.
+
+
 // undefined == ?
 console.log(undefined == 0); // false, undefined and 0 have different types, so they are not considered equal.
 console.log(undefined == undefined); // true, undefined is strictly equal to itself.
