@@ -55,4 +55,4 @@ console.log(+"512px");                // Output: NaN
 ----- 
 
 ### For more: 
-  - [Practice]([https://github.com/saidali-ibn-zafar/Deep-JS-Foundations-V3/blob/main/Deep-JS-Foundations%2C%20V3/coercion.js](https://github.com/saidali-ibn-zafar/Deep-JS-Foundations-V3/blob/main/Deep-JS-Foundations%2C%20V3/parseIntFloat.js))
+  - [Practice](https://github.com/saidali-ibn-zafar/Deep-JS-Foundations-V3/blob/main/Deep-JS-Foundations%2C%20V3/parseIntFloat.js)
