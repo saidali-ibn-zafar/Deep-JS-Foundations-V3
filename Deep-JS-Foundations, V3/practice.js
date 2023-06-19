@@ -1,3 +1,55 @@
+// Code  1
+const result = (function() {
+  return 
+  {
+    b: 10
+  };
+})();
+
+console.log(result); // Output: undefined
+// -------------------
+
+// Code  2
+var foo = { n: 1 };
+var bar = foo;
+
+foo.x = foo = { n: 2 };
+
+console.log(foo.x); // Output: undefined
+console.log(foo); // Output: { n: 2 }
+console.log(bar); // Output: { n: 1, x: { n: 2 } }
+// -------------------
+
+// Code  3
+function fooo() {
+  console.log(a); // Output: undefined
+  var a = 10;
+  console.log(a); // Output: 10
+}
+
+fooo();
+// -------------------
+
+// Code  4
+var a = 10;
+
+function foo1() {
+  console.log(a); // Output: undefined
+  var a = 20;
+  console.log(a); // Output: 20
+}
+
+foo1();
+// -------------------
+
+// Code  5
+function f(...args) {
+  return args;
+}
+
+console.log(f(1,2,3)); // Output: [1, 2, 3]
+// -------------------
+
 // const get_missing_letters = (str) => {
 //   const alphabet = "abcdefghijklmnopqrstuvwxvz";
 //   str = str.toLowerCase().split("");
@@ -243,26 +295,7 @@ cat.meow(); // Defined directly on 'cat' object
 
 // console.log(a); 
 // var a = 3;
-
-// console.log([] == ![]) // true
-// "b" + "a" + +"a" + "a" // baNaNa
-// !![] 
-// [] == true
-
-
-// console.log(null == 0); 
-// console.log(null > 0); 
-// console.log(null >= 0); 
-
-undefined == 0;
-undefined > 0;
-undefined >= 0; 
-
-// const myStr = 'Hello';
-// const newStr = myStr.toLowerCase();
-// console.log(myStr); 
- console.log(newStr); //
-
+// - - - - - - - - 
 
 
 
