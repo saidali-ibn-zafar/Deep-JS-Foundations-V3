@@ -3,6 +3,7 @@
 - [Type Coercion and Comparison](coercion.md)
 - [Hoisting and TDZ error](hoisting.md)
 - [parseInt, parseFloat and Number()](parseIntFloatAndNumberOrPlus.md)
+- [Math.min() < or > Math.max() = ?](MathMinMax.md)
 
 Dive into the core pillars of the JavaScript language with You Don't Know JS, book series. You'll learn JavaScript's types, how to convert between them, and compare them with == and ===. You'll also learn lexical scope and closure. As well as the objects oriented system (this, prototypes and classes).
 
