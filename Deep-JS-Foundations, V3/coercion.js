@@ -132,3 +132,65 @@ console.log(undefined === []); // false
 console.log(undefined === ""); // false
 
 // NaN == ? , The comparison NaN == NaN evaluates to false. This is because NaN is considered unequal to any value, including NaN itself.
+
+// - - - - - - - - - - - -
+// practice
+
+console.log("5" + 2); // 52
+console.log(null == undefined); // true
+console.log(false == 0); // true
+console.log("" == false); // true
+console.log(Number("10") + 5); // 15
+console.log(Boolean(0)); // false
+console.log([] + []); // ""
+
+// - - - - -
+console.log({} + []); // [object Object]
+// The left operand {} is an empty object. To perform coercion, JavaScript attempts to convert it to a string.
+// When an object is converted to a string, it uses the toString() method of the object. In this case, the toString() method is called on the empty object {}, resulting in the string "[object Object]".
+// AND when we convert empty array to string it is "", so "[object Object]" + "" = [object Object]
+
+// - - - - -
+
+// - - - - -
+console.log([] == ![]); // true
+// The right operand ![] is evaluated first. The ! operator coerces the empty array [] to its boolean equivalent, which is true. Applying the negation (!) operator to true results in false. So, ![] evaluates to false.
+// When an array is coerced to a primitive value, it is first converted to a string representation. The empty array [] converts to an empty string "".
+// then The expression becomes "" == false. Now, JavaScript performs coercion to a common type, which is numeric in this case.
+// FINALLY: 0 == 0 // true
+
+// - - - - -
+console.log(NaN === NaN); // false
+console.log(typeof typeof 1);
+console.log(0 || "hello");
+
+// - - - - -
+console.log(NaN || "hello"); // hello
+// In JavaScript, the logical OR (||) operator performs coercion when evaluating its operands. It follows these rules:
+//
+// If the left operand is truthy, the operator returns the value of the left operand.
+// If the left operand is falsy, the operator returns the value of the right operand.
+// In this case, NaN is considered a falsy value. When the expression is evaluated, JavaScript performs coercion and evaluates the left operand (NaN). Since NaN is falsy, the || operator moves on to evaluate the right operand ("hello"). Since "hello" is a non-empty string and therefore truthy, the operator returns the value of the right operand, which is "hello".
+
+// - - - - -
+// How can you convert a value to a boolean using coercion in JavaScript?
+var value = "Hello";
+var booleanValue = !value;
+
+console.log(booleanValue); // Output: false
+
+// To convert a value to a boolean using coercion in JavaScript, you can use the logical NOT (!) operator. The ! operator coerces the operand to a boolean value by following these rules:
+
+// If the operand is truthy (i.e., it evaluates to true in a boolean context), the ! operator will return false.
+// If the operand is falsy (i.e., it evaluates to false in a boolean context), the ! operator will return true.
+
+// - - - - -
+
+// When using the strict inequality operator (!==) in JavaScript, coercion does not occur. The strict inequality operator compares both the value and the type of the operands.
+console.log(5 !== "5"); // true
+// In the above example, the operands 5 and "5" have different types (number and string, respectively), so the strict inequality operator returns true because the operands are not equal in both value and type.
+
+// If we were to use the loose inequality operator (!=), coercion would occur, and the result would be different:
+console.log(5 != "5"); // false
+
+// In this case, the loose inequality operator performs coercion, converting the string "5" to a number before the comparison. Since both operands have the same numerical value of 5, the loose inequality operator returns false.
