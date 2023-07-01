@@ -21,7 +21,7 @@ function outer() {
 outer();
 
 // Hoisting and let
-console.log(x); // undefined
+console.log(x); // ReferenceError: Cannot access 'x' before initialization
 let x = "Hello, hoisting!";
 console.log(x); // Hello, hoisting!
 
@@ -84,7 +84,7 @@ const a = 5; // SyntaxError: Identifier 'a' has already been declared
 var a = 1;
 function b() {
   a = 10;
-  return;
+  return; // it returns nothing, I mean function returns nothing
   function a() {}
 }
 b();
@@ -92,7 +92,7 @@ console.log(a); // 1
 
 // undefined Typeof Function
 function test() {
-  console.log(a);
+  console.log(a); // undefined
   var a = 'Hello, world!';
 }
 test(); // undefined
@@ -113,16 +113,16 @@ var foo = function() {
 foo(); // second
 
 // undefined Typeof Function
-console.log(a());
+console.log(a()); // a is not a function (yet)
 var a = function() {
   return 'Hello world!';
 }
 
 // Test Scope and Redeclaration
 function test() {
-  console.log(x);
+  console.log(x); // undefined
   var x = 5;
-  console.log(x);
+  console.log(x); // 5
   var x = 10;
 }
 test();
@@ -139,20 +139,20 @@ function foo() {
     console.log('Hello, world!');
   }
 }
-foo();
+foo(); // Hello, world!
 
 // Scope and var Redeclaration
 var a = 1;
 function b() {
   a = 10;
   var a;
-  console.log(a);
+  console.log(a); // 10 with using var, but not let, const
 }
 b();
-console.log(a);
+console.log(a); // 1
 
 // foo is not a function
-console.log(foo);
+console.log(foo); // [Function: foo] -> it is a string representation of function foo
 function foo() {
   console.log('Hello, world!');
 }
@@ -161,19 +161,19 @@ var foo = 'bar';
 // Scope and var in Function
 var a = 1;
 function b() {
-  console.log(a);
+  console.log(a); // [Function a:]
   a = 10;
-  console.log(a);
+  console.log(a); // 10
   function a() {}
 }
 b();
-console.log(a);
+console.log(a); // 1
 
 // Scope and Closure
 function outer() {
   inner();
   function inner() {
-    console.log(foo);
+    console.log(foo);  // undefined
     var foo = 'Hello';
   }
 }
@@ -183,7 +183,7 @@ outer();
 var x = 'outer';
 function outer() {
   var x = 'inner';
-  console.log(x);
+  console.log(x); // inner
 }
 outer();
-console.log(x);
+console.log(x); // outer
